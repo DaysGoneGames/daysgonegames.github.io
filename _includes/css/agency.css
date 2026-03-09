@@ -865,3 +865,68 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
 }
+
+/* Game Carousel */
+#gameCarousel {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#gameCarousel .item img {
+    cursor: pointer;
+    max-height: 500px;
+    margin: 0 auto;
+}
+
+#gameCarousel .carousel-control {
+    background-image: none;
+    color: #{{ site.data.template.color.primary }};
+    font-size: 30px;
+    width: 5%;
+}
+
+#gameCarousel .carousel-indicators li {
+    border-color: #{{ site.data.template.color.primary }};
+}
+
+#gameCarousel .carousel-indicators .active {
+    background-color: #{{ site.data.template.color.primary }};
+}
+
+/* Lightbox */
+#lightboxModal .modal-dialog {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+#lightboxModal .modal-content {
+    background: rgba(0,0,0,0.95);
+    border: none;
+    box-shadow: none;
+}
+
+#lightboxModal img {
+    cursor: pointer;
+    max-height: 80vh;
+}
+
+/* Subscribe form */
+.subscribe-form .input-group .btn-xl {
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+/* Navbar brand logo */
+.navbar-brand img {
+    height: 30px;
+    display: inline-block;
+    margin-top: -5px;
+}
+
+@media(min-width:768px) {
+    .navbar-brand img {
+        height: 40px;
+        margin-top: -10px;
+    }
+}
