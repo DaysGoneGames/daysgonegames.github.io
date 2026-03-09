@@ -866,6 +866,71 @@ body {
     webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
 }
 
+/* Header brand area */
+.intro-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.intro-brand-logo {
+    height: 80px;
+    width: auto;
+}
+
+.intro-brand-name {
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+@media(min-width:768px) {
+    .intro-brand-logo {
+        height: 120px;
+    }
+
+    .intro-brand-name {
+        font-size: 56px;
+        letter-spacing: 5px;
+    }
+}
+
+/* Game title area */
+.game-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.game-title-logo {
+    height: 60px;
+    width: auto;
+}
+
+.game-title-text {
+    font-family: {{ site.data.template.font.primary }};
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media(min-width:768px) {
+    .game-title-logo {
+        height: 80px;
+    }
+
+    .game-title-text {
+        font-size: 48px;
+    }
+}
+
 /* Game Carousel */
 #gameCarousel {
     max-width: 900px;
@@ -881,8 +946,13 @@ body {
 #gameCarousel .carousel-control {
     background-image: none;
     color: #{{ site.data.template.color.primary }};
-    font-size: 30px;
-    width: 5%;
+    width: 8%;
+    opacity: 0.8;
+    text-shadow: none;
+}
+
+#gameCarousel .carousel-control:hover {
+    opacity: 1;
 }
 
 #gameCarousel .carousel-indicators li {
@@ -912,9 +982,62 @@ body {
 }
 
 /* Subscribe form */
-.subscribe-form .input-group .btn-xl {
-    padding: 10px 30px;
+.subscribe-row {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.subscribe-input {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+    height: auto;
+    line-height: 1.5;
+}
+
+.subscribe-input:focus {
+    border-color: #{{ site.data.template.color.primary }};
+}
+
+.subscribe-btn {
+    padding: 12px 30px;
     font-size: 14px;
+    border-radius: 0 3px 3px 0;
+    margin: 0;
+    white-space: nowrap;
+    line-height: 1.5;
+}
+
+/* Social icon links with SVG */
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus,
+.social-icon-link:active {
+    background-color: #{{ site.data.template.color.primary }};
+    color: #fff;
+}
+
+.social-icon-link svg {
+    fill: currentColor;
 }
 
 /* Navbar brand logo */
