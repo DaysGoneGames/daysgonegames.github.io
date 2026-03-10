@@ -11645,6 +11645,29 @@ footer span.copyright {
   filter: blur(0);
 }
 
+/* Subscribe modal */
+.subscribe-modal-content {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+.subscribe-modal-content .modal-body {
+  padding: 2.5rem 2rem;
+}
+.subscribe-modal-content h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.subscribe-modal-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+}
+.subscribe-modal-content .btn {
+  min-width: 120px;
+  border-radius: 6px;
+}
+
 /* Background image blur-up transition */
 .bg-blur-section {
   position: relative;
