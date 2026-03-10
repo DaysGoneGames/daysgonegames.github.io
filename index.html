@@ -47,7 +47,7 @@
         </div>
     </nav>
     <!-- Masthead / Header -->
-    <header class="masthead">
+    <header class="masthead bg-blur-section">
         <div class="container">
             <div class="intro-brand">
                 <img src="assets/img/logos/DaysGoneLOGO.png" alt="DaysGone Games" class="intro-brand-logo" />
@@ -56,7 +56,7 @@
         </div>
     </header>
     <!-- Game Info Section -->
-    <section class="page-section" id="game">
+    <section class="page-section bg-blur-section" id="game">
         <div class="container">
             <div class="text-center">
                 <div class="game-title-row">
@@ -85,24 +85,35 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="assets/img/game_info/1.png" alt="Underveil Screenshot 1"
-                                    class="d-block mx-auto img-fluid game-screenshot" data-bs-toggle="modal"
-                                    data-bs-target="#lightboxModal" data-img="assets/img/game_info/1.png" />
+                                <img src="assets/img/game_info/1.jpg" alt="Underveil Screenshot 1"
+                                    class="d-block mx-auto img-fluid game-screenshot lazyload"
+                                    data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                                    data-img="assets/img/game_info/1.jpg"
+                                    style="background-image:url('assets/img/game_info/thumb/1.jpg');background-size:cover" />
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/img/game_info/2.png" alt="Underveil Screenshot 2"
-                                    class="d-block mx-auto img-fluid game-screenshot" data-bs-toggle="modal"
-                                    data-bs-target="#lightboxModal" data-img="assets/img/game_info/2.png" />
+                                <img src="assets/img/game_info/thumb/2.jpg"
+                                    data-src="assets/img/game_info/2.jpg" alt="Underveil Screenshot 2"
+                                    class="d-block mx-auto img-fluid game-screenshot lazyload"
+                                    data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                                    data-img="assets/img/game_info/2.jpg"
+                                    style="background-image:url('assets/img/game_info/thumb/2.jpg');background-size:cover" />
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/img/game_info/3.png" alt="Underveil Screenshot 3"
-                                    class="d-block mx-auto img-fluid game-screenshot" data-bs-toggle="modal"
-                                    data-bs-target="#lightboxModal" data-img="assets/img/game_info/3.png" />
+                                <img src="assets/img/game_info/thumb/3.jpg"
+                                    data-src="assets/img/game_info/3.jpg" alt="Underveil Screenshot 3"
+                                    class="d-block mx-auto img-fluid game-screenshot lazyload"
+                                    data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                                    data-img="assets/img/game_info/3.jpg"
+                                    style="background-image:url('assets/img/game_info/thumb/3.jpg');background-size:cover" />
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/img/game_info/4.png" alt="Underveil Screenshot 4"
-                                    class="d-block mx-auto img-fluid game-screenshot" data-bs-toggle="modal"
-                                    data-bs-target="#lightboxModal" data-img="assets/img/game_info/4.png" />
+                                <img src="assets/img/game_info/thumb/4.jpg"
+                                    data-src="assets/img/game_info/4.jpg" alt="Underveil Screenshot 4"
+                                    class="d-block mx-auto img-fluid game-screenshot lazyload"
+                                    data-bs-toggle="modal" data-bs-target="#lightboxModal"
+                                    data-img="assets/img/game_info/4.jpg"
+                                    style="background-image:url('assets/img/game_info/thumb/4.jpg');background-size:cover" />
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel"
@@ -132,7 +143,7 @@
         </div>
     </div>
     <!-- Developer / Team Section -->
-    <section class="page-section bg-light" id="team">
+    <section class="page-section bg-light bg-blur-section" id="team">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Developer</h2>
@@ -141,7 +152,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="assets/img/team/Designer.jpg" alt="Usagi Knight" />
+                        <img class="mx-auto rounded-circle" src="assets/img/team/Designer.jpg" alt="Usagi Knight" loading="lazy" />
                         <h4>Usagi Knight</h4>
                         <p class="text-muted">Designer</p>
                     </div>
@@ -157,7 +168,7 @@
         </div>
     </section>
     <!-- Dev Log / About Section -->
-    <section class="page-section" id="about">
+    <section class="page-section bg-blur-section" id="about">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Dev Log</h2>
@@ -166,7 +177,7 @@
             <ul class="timeline">
                 <li >
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/dev_log/2.jpg"
-                            alt="Framework Development" /></div>
+                            alt="Framework Development" loading="lazy" /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>March 2026</h4>
@@ -181,7 +192,7 @@
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/dev_log/1.jpg"
-                            alt="Game Design" /></div>
+                            alt="Game Design" loading="lazy" /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>January 2026</h4>

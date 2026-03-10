@@ -51,6 +51,54 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Background image blur-up preloader
+    var bgImages = [
+        { selector: '.masthead', src: 'assets/img/header-bg.jpg' },
+        { selector: '#game', src: 'assets/img/div_bg/game.jpg' },
+        { selector: '#team', src: 'assets/img/div_bg/team.jpg' },
+        { selector: '#about', src: 'assets/img/div_bg/about.jpg' }
+    ];
+    bgImages.forEach(function (item) {
+        var el = document.querySelector(item.selector);
+        if (!el) return;
+        var img = new Image();
+        img.onload = function () {
+            el.classList.add('bg-loaded');
+        };
+        img.src = item.src;
+    });
+
+    // Lazy load carousel images on slide change
+    function lazyLoadImg(img) {
+        var dataSrc = img.getAttribute('data-src');
+        if (dataSrc) {
+            img.setAttribute('src', dataSrc);
+            img.removeAttribute('data-src');
+            img.addEventListener('load', function () {
+                img.classList.add('loaded');
+            });
+        } else if (!img.classList.contains('loaded')) {
+            img.classList.add('loaded');
+        }
+    }
+
+    // Pre-load first slide immediately
+    var firstSlideImg = document.querySelector('.carousel-item.active .game-screenshot');
+    if (firstSlideImg) {
+        firstSlideImg.addEventListener('load', function () {
+            firstSlideImg.classList.add('loaded');
+        });
+        if (firstSlideImg.complete) firstSlideImg.classList.add('loaded');
+    }
+
+    var gameCarousel = document.getElementById('gameCarousel');
+    if (gameCarousel) {
+        gameCarousel.addEventListener('slide.bs.carousel', function (e) {
+            var nextImg = e.relatedTarget.querySelector('.game-screenshot');
+            if (nextImg) lazyLoadImg(nextImg);
+        });
+    }
+
     // Lightbox for game screenshots
     const gameScreenshots = document.querySelectorAll('.game-screenshot');
     const lightboxImage = document.getElementById('lightboxImage');

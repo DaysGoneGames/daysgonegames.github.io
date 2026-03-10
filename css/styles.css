@@ -10947,11 +10947,15 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../assets/img/thumb/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  transition: background-image 0s;
+}
+header.masthead.bg-loaded {
+  background-image: url("../assets/img/header-bg.jpg");
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -11321,6 +11325,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Header brand area */
 .masthead {
+  background-image: url("../assets/img/thumb/header-bg.jpg");
+}
+.masthead.bg-loaded {
   background-image: url("../assets/img/header-bg.jpg");
 }
 
@@ -11417,13 +11424,16 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Section background images */
 #game {
-  background-image: url("../assets/img/div_bg/game.jpg");
+  background-image: url("../assets/img/thumb/game.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
   min-height: 80vh;
+}
+#game.bg-loaded {
+  background-image: url("../assets/img/div_bg/game.jpg");
 }
 
 #game::before {
@@ -11443,12 +11453,15 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 #team {
-  background-image: url("../assets/img/div_bg/team.jpg");
+  background-image: url("../assets/img/thumb/team.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
+}
+#team.bg-loaded {
+  background-image: url("../assets/img/div_bg/team.jpg");
 }
 
 #team::before {
@@ -11468,12 +11481,15 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 #about {
-  background-image: url("../assets/img/div_bg/about.jpg");
+  background-image: url("../assets/img/thumb/about.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
+}
+#about.bg-loaded {
+  background-image: url("../assets/img/div_bg/about.jpg");
 }
 
 #about::before {
@@ -11618,4 +11634,42 @@ footer span.copyright {
   text-transform: none;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 40px;
+}
+
+/* Lazy load blur-up transition */
+.lazyload {
+  filter: blur(20px);
+  transition: filter 0.5s ease;
+}
+.lazyload.loaded {
+  filter: blur(0);
+}
+
+/* Background image blur-up transition */
+.bg-blur-section {
+  position: relative;
+}
+.bg-blur-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: opacity 0.6s ease;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+.masthead.bg-blur-section::after {
+  z-index: 0;
+}
+.masthead .container {
+  position: relative;
+  z-index: 1;
+}
+.bg-blur-section.bg-loaded::after {
+  opacity: 0;
 }
